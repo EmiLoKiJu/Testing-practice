@@ -48,7 +48,12 @@ class CalculatorClass {
 
 const classcal = new CalculatorClass;
 
+const capfirst = (str) => {
+  return str.charAt(0).toUpperCase() + str.substring(1);
+}
+
 export {reverseString};
 export {stringLength};
 export {calculatorObject};
 export {classcal};
+export {capfirst};

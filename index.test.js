@@ -1,4 +1,5 @@
-import {stringLength, reverseString, calculatorObject, classcal} from './index.js';
+// import { describe, test, expect } from '@jest/globals';
+import {stringLength, reverseString, calculatorObject, classcal, capfirst} from './index.js';
 
 test('count the number of characters of the string', () => {
   expect(stringLength('thishas8')).toBe(8);
@@ -67,6 +68,18 @@ describe('my calculator', () => {
     });
     test(`class: returns ${expected}`, () => {
       expect(classcal.multiply(a, b)).toBe(expected);
+    });
+  });
+});
+
+describe('First character capitalized', () => {
+  describe.each([
+    ['mesa', 'Mesa'],
+    ['paralelo', 'Paralelo'],
+    ['itsatrap', 'Itsatrap'],
+  ])('case: %s', (a, expected) => {
+    test(`should return ${expected}`, () => {
+      expect(capfirst(a)).toBe(expected);
     });
   });
 });
